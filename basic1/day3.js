@@ -27,3 +27,5 @@ function fun(n)
     let num2=[1,2,3,4,5];
     let tot1=num2.reduce((acc,val)=>acc+val,0);
     console.log(tot1);*/
+let mydate= new Date();
+console.log(mydate.toLocaleTimeString())
