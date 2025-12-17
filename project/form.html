@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Project Demo</title>
+</head>
+
+<body style="margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, sans-serif; background:#eef2f7; color:#333;">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#667eea,#764ba2);
+                padding:25px;
+                text-align:center;
+                color:white;
+                box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+
+        <h1 style="display:inline-block;
+                   padding:12px 30px;
+                   background:rgba(255,255,255,0.15);
+                   border-radius:30px;
+                   font-size:32px;
+                   letter-spacing:1px;">
+            Demo of Online Project
+        </h1>
+    </div>
+
+    <!-- Menu -->
+    <div style="position:sticky;
+                top:0;
+                background:white;
+                padding:12px;
+                text-align:center;
+                box-shadow:0 2px 8px rgba(0,0,0,0.1);
+                z-index:10;
+                font-weight:600;">
+
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Home</span>
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Gallery</span>
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Menu1</span>
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Menu3</span>
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Menu4</span>
+        <span style="margin:0 18px; color:#555; cursor:pointer;">Menu5</span>
+    </div>
+
+    <!-- Main Content -->
+    <div style="display:flex;
+                gap:20px;
+                padding:30px;">
+
+        <!-- Left Card -->
+        <div style="flex:1;
+                    background:white;
+                    border-radius:14px;
+                    padding:25px;
+                    box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+
+            <h3 style="text-align:center; margin-bottom:20px; color:#667eea;">
+                Information
+            </h3>
+
+            <p style="padding:10px; background:#f3f5ff; border-left:4px solid #667eea; margin-bottom:10px; border-radius:6px;">Text 1</p>
+            <p style="padding:10px; background:#f3f5ff; border-left:4px solid #667eea; margin-bottom:10px; border-radius:6px;">Text 1</p>
+            <p style="padding:10px; background:#f3f5ff; border-left:4px solid #667eea; margin-bottom:10px; border-radius:6px;">Text 1</p>
+            <p style="padding:10px; background:#f3f5ff; border-left:4px solid #667eea; margin-bottom:10px; border-radius:6px;">Text 1</p>
+        </div>
+
+        <!-- Middle Card -->
+        <div style="flex:1;
+                    background:white;
+                    border-radius:14px;
+                    padding:25px;
+                    box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+
+            <h3 style="text-align:center; margin-bottom:20px; color:#667eea;">
+                Important Notice
+            </h3>
+
+            <marquee direction="up"
+                     onmouseover="this.stop()"
+                     onmouseout="this.start()"
+                     style="height:200px; padding:10px; font-weight:500;">
+                Notice 1<br><br>
+                Notice 2<br><br>
+                Notice 3<br><br>
+                Notice 4<br><br>
+                Notice 5
+            </marquee>
+        </div>
+
+        <!-- Right Card -->
+        <div style="flex:1;
+                    background:white;
+                    border-radius:14px;
+                    padding:25px;
+                    box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+
+            <h3 style="text-align:center; margin-bottom:20px; color:#667eea;">
+                Login
+            </h3>
+
+            <form action="next.html" method="get">
+
+                <table style="margin:auto;">
+                    <tr>
+                        <td style="padding:8px;">Username</td>
+                        <td style="padding:8px;">
+                            <input type="text" placeholder="Enter username"
+                                   style="width:160px;
+                                          padding:8px;
+                                          border-radius:6px;
+                                          border:1px solid #ccc;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding:8px;">Password</td>
+                        <td style="padding:8px;">
+                            <input type="password" placeholder="Enter password"
+                                   style="width:160px;
+                                          padding:8px;
+                                          border-radius:6px;
+                                          border:1px solid #ccc;">
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="text-align:center; margin-top:15px;">
+                    <button type="submit"
+                            style="padding:8px 18px;
+                                   border:none;
+                                   border-radius:20px;
+                                   margin:5px;
+                                   font-weight:600;
+                                   background:#667eea;
+                                   color:white;
+                                   cursor:pointer;">
+                        Login
+                    </button>
+
+                    <button type="reset"
+                            style="padding:8px 18px;
+                                   border:none;
+                                   border-radius:20px;
+                                   margin:5px;
+                                   font-weight:600;
+                                   background:#e74c3c;
+                                   color:white;
+                                   cursor:pointer;">
+                        Cancel
+                    </button>
+                </div>
+
+                <div style="text-align:center; margin-top:15px;">
+                    <a href="registration.html"
+                       style="text-decoration:none; color:#667eea; font-weight:600;">
+                        New User? Sign Up
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

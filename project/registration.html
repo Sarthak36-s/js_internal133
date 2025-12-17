@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        .container {
+            width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .gender {
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9f7ef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form id="registrationForm">
+        <label>Name</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div>
+
+        <label>Email</label>
+        <input type="email" id="email">
+        <div class="error" id="emailError"></div>
+
+        <label>Gender</label>
+        <div class="gender">
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+        <div class="error" id="genderError"></div>
+
+        <label>Course</label>
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option value="BCA">BCA</option>
+            <option value="BSc">Btech</option>
+            <option value="BCom">BCom</option>
+            <option value="MBA">MBA</option>
+        </select>
+        <div class="error" id="courseError"></div>
+
+        <label>
+            <input type="checkbox" id="terms"> I agree to Terms & Conditions
+        </label>
+        <div class="error" id="termsError"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="output" id="output" style="display:none;"></div>
+</div>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Clear errors
+        document.querySelectorAll(".error").forEach(err => err.innerHTML = "");
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let course = document.getElementById("course").value;
+        let terms = document.getElementById("terms").checked;
+        let gender = document.querySelector('input[name="gender"]:checked');
+
+        let isValid = true;
+
+        // Name validation
+        if (name === "") {
+            document.getElementById("nameError").innerHTML = "Name should not be empty";
+            isValid = false;
+        }
+
+        // Email validation
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (email === "") {
+            document.getElementById("emailError").innerHTML = "Email is required";
+            isValid = false;
+        } else if (!email.match(emailPattern)) {
+            document.getElementById("emailError").innerHTML = "Invalid email format";
+            isValid = false;
+        }
+
+        // Gender validation
+        if (!gender) {
+            document.getElementById("genderError").innerHTML = "Please select gender";
+            isValid = false;
+        }
+
+        // Course validation
+        if (course === "") {
+            document.getElementById("courseError").innerHTML = "Please select a course";
+            isValid = false;
+        }
+
+        // Terms validation
+        if (!terms) {
+            document.getElementById("termsError").innerHTML = "You must agree to terms";
+            isValid = false;
+        }
+
+        // If all valid
+        if (isValid) {
+            document.getElementById("output").style.display = "block";
+            document.getElementById("output").innerHTML = `
+                <h3>Registration Successful</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Gender:</strong> ${gender.value}</p>
+                <p><strong>Course:</strong> ${course}</p>
+            `;
+
+            document.getElementById("registrationForm").reset();
+        }
+    });
+</script>
+
+</body>
+</html>
